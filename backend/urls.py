@@ -1,7 +1,6 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from .views import ContactListCreate
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('contacts.urls')),  # 👈 Make sure this line exists
+    path('contacts/', ContactListCreate.as_view(), name='contact-list-create'),
 ]
